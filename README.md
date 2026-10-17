@@ -1,35 +1,69 @@
-# Slink.io
+<div align="center">
 
-Jogo casual de navegador com interface colorida, arena animada e sistemas de progressão.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0a0a,100:D4AF37&height=160&section=header&text=SLINK.IO&fontSize=56&fontColor=F5E9C8&animation=fadeIn&fontAlignY=38&desc=A%20fast%20arcade%20game%20for%20the%20browser&descAlignY=62&descSize=16" width="100%" />
 
-## Executar localmente
+<a href="https://samuelpedroso-dev.github.io/slink-io/">
+  <img src="https://img.shields.io/badge/-PLAY%20NOW-E6C35C?style=for-the-badge&logo=googlechrome&logoColor=D4AF37&labelColor=0a0a0a" alt="Play now" />
+</a>
+<img src="https://img.shields.io/badge/-HTML5-E6C35C?style=for-the-badge&logo=html5&logoColor=D4AF37&labelColor=0a0a0a" />
+<img src="https://img.shields.io/badge/-JavaScript-E6C35C?style=for-the-badge&logo=javascript&logoColor=D4AF37&labelColor=0a0a0a" />
+<img src="https://img.shields.io/badge/-Zero%20Dependencies-E6C35C?style=for-the-badge&labelColor=0a0a0a" />
 
-1. Baixe ou clone este repositório.
-2. Abra `index.html` em um navegador moderno.
+</div>
 
-Não é necessário instalar dependências nem executar um servidor para testar a versão atual.
+<br/>
 
-## Publicar com GitHub Pages
+## ◆ Overview
 
-1. Crie um repositório no GitHub e envie os arquivos desta pasta para a raiz do repositório.
-2. No repositório, acesse **Settings → Pages**.
-3. Em **Build and deployment**, selecione **Deploy from a branch**.
-4. Escolha a branch principal (normalmente `main`) e a pasta `/ (root)`; salve.
-5. Aguarde a publicação. O GitHub exibirá o endereço do site na seção **Pages**.
+Slink.io is a casual arcade game that runs entirely in the browser. It features a colorful interface, an animated arena and progression systems that keep every round moving.
 
-## Estrutura
+The whole game ships as a single static page. No install, no build step and no server, just open it and play.
 
-```text
-slink-io/
-├── index.html   # jogo e estilos/scripts da versão atual
-├── README.md    # documentação e instruções de publicação
-├── .gitignore   # arquivos locais que não devem ser enviados
-└── .nojekyll    # evita processamento Jekyll no GitHub Pages
+<br/>
+
+## ◆ Play
+
+**Online.** Open the [live version](https://samuelpedroso-dev.github.io/slink-io/), hosted on GitHub Pages.
+
+**Locally.** Clone the repository and open `index.html` in any modern browser.
+
+```bash
+git clone https://github.com/Samuelpedroso-dev/slink-io.git
+cd slink-io
 ```
 
-## Observações
+<br/>
 
-- A versão atual é um site estático, sem etapa de build.
-- A fonte Baloo 2 é carregada do Google Fonts; a conexão com a internet permite carregá-la. Se indisponível, o navegador usa fontes alternativas.
-- Publicar no GitHub Pages hospeda o site, mas não cria por si só multiplayer online, contas, backend ou armazenamento remoto.
-- Revise e confirme os direitos de uso de todo conteúdo de terceiros antes de distribuir publicamente.
+## ◆ Project Structure
+
+```
+slink-io/
+├── index.html    game, styles and scripts
+├── README.md     documentation
+├── .gitignore
+└── .nojekyll     serves the files as they are on GitHub Pages
+```
+
+<br/>
+
+## ◆ Roadmap
+
+<table>
+<tr><td>◆</td><td>Release on web game portals such as CrazyGames and Poki</td></tr>
+<tr><td>◆</td><td>New arenas and progression content</td></tr>
+<tr><td>◆</td><td>Online leaderboards</td></tr>
+</table>
+
+<br/>
+
+## ◆ Author
+
+Built by **[Samuel Pedroso](https://github.com/Samuelpedroso-dev)**, Brazil.
+
+If you enjoyed the game, consider leaving a ⭐ on the repository.
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0a0a,100:D4AF37&height=100&section=footer" width="100%" />
+
+</div>
