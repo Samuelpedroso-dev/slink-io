@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
@@ -314,21 +314,21 @@ body[data-ctrlsize="p"]{ --cs:96px; } body[data-ctrlsize="g"]{ --cs:148px; }
 <canvas id="game"></canvas>
 
 <div id="menu">
-  <div id="menuCoins" class="coinPill" role="button" tabindex="0" aria-label="Escamas"><span class="coin"></span><b class="coinValue">0</b><span class="gem"></span><b class="gemValue">0</b></div>
-  <button id="settingsBtn" aria-label="Ajustes"><svg viewBox="0 0 24 24" id="gearIco"></svg><span class="ol">Ajustes</span></button>
+  <div id="menuCoins" class="coinPill" role="button" tabindex="0" aria-label="Scales"><span class="coin"></span><b class="coinValue">0</b><span class="gem"></span><b class="gemValue">0</b></div>
+  <button id="settingsBtn" aria-label="Settings"><svg viewBox="0 0 24 24" id="gearIco"></svg><span class="ol">Settings</span></button>
   <div class="logoWrap"><canvas id="logoSnake"></canvas><h1 class="logo">slink.io</h1></div>
   <div class="statsRow">
-    <div class="stat"><h3>Partida anterior</h3>
-      <div class="srow"><span class="lblSize">Tamanho</span><b id="lastSize">0</b></div>
+    <div class="stat"><h3>Last match</h3>
+      <div class="srow"><span class="lblSize">Size</span><b id="lastSize">0</b></div>
       <div class="srow"><span class="lblBoops">Boops</span><b id="lastBoops">0</b></div></div>
-    <div class="stat"><h3>Seu melhor</h3>
-      <div class="srow"><span class="lblSize">Tamanho</span><b id="bestSize">0</b></div>
+    <div class="stat"><h3>Your best</h3>
+      <div class="srow"><span class="lblSize">Size</span><b id="bestSize">0</b></div>
       <div class="srow"><span class="lblBoops">Boops</span><b id="bestBoops">0</b></div></div>
   </div>
-  <input id="nameInput" maxlength="16" placeholder="Apelido" autocomplete="off" aria-label="Apelido">
-  <button class="playBtn" id="playBtn"><span class="ol">jogar!</span></button>
-  <button class="corner" id="shopBtn" aria-label="Loja"><canvas id="skinPreview"></canvas><span class="ol">Loja</span></button>
-  <button class="corner" id="missionsBtn" aria-label="Missões"><span class="cornerIco" id="missionIco"></span><span class="ol">Missões</span><span id="missionBadge" class="badge hidden">0</span></button>
+  <input id="nameInput" maxlength="16" placeholder="Nickname" autocomplete="off" aria-label="Nickname">
+  <button class="playBtn" id="playBtn"><span class="ol">play!</span></button>
+  <button class="corner" id="shopBtn" aria-label="Shop"><canvas id="skinPreview"></canvas><span class="ol">Shop</span></button>
+  <button class="corner" id="missionsBtn" aria-label="Missions"><span class="cornerIco" id="missionIco"></span><span class="ol">Missions</span><span id="missionBadge" class="badge hidden">0</span></button>
 </div>
 
 <div id="hud" class="hidden">
@@ -337,41 +337,41 @@ body[data-ctrlsize="p"]{ --cs:96px; } body[data-ctrlsize="g"]{ --cs:148px; }
   <div class="ctrl sideR" id="boostBtn"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="#fff"/></svg></div>
   <div class="turn" id="turnL"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   <div class="turn" id="turnR"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-  <div id="rankBox"><span class="rk">rank</span> <span id="rankNum">0</span> <span class="of">de</span> <span id="rankTotal">0</span></div>
-  <div id="centerStats"><div id="massVal">0</div><div id="massLbl">tamanho</div></div>
+  <div id="rankBox"><span class="rk">rank</span> <span id="rankNum">0</span> <span class="of">of</span> <span id="rankTotal">0</span></div>
+  <div id="centerStats"><div id="massVal">0</div><div id="massLbl">size</div></div>
   <div id="boopBox"><div id="boopVal">0</div><div id="boopLbl">boops</div></div>
 </div>
 
 <div id="deathScreen" class="hidden">
-  <h2 class="ol">fim de jogo</h2>
+  <h2 class="ol">game over</h2>
   <p>Tamanho <b id="finalSize">0</b></p>
-  <p>Posição <b id="finalRank">0</b> e <b id="finalBoops">0</b> boops</p>
-  <p class="earn"><span class="coin"></span><b>+<span id="earnVal">0</span></b><button class="rewardBtn" id="doubleBtn">▶ Dobrar</button></p>
-  <div id="newBest" class="newBest hidden">Novo recorde!</div>
-  <button class="playBtn" id="againBtn"><span class="ol">de novo!</span></button>
+  <p>Rank <b id="finalRank">0</b> and <b id="finalBoops">0</b> boops</p>
+  <p class="earn"><span class="coin"></span><b>+<span id="earnVal">0</span></b><button class="rewardBtn" id="doubleBtn">▶ Double</button></p>
+  <div id="newBest" class="newBest hidden">New record!</div>
+  <button class="playBtn" id="againBtn"><span class="ol">again!</span></button>
   <button class="aiBtn" id="menuBtn">MENU</button>
 </div>
 
 <div id="offline" class="hidden" role="alert">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="19" r="1.6" fill="currentColor"/><path d="M3 3l18 18" stroke="#ff6f86" stroke-width="2.4" stroke-linecap="round"/></svg>
-  <h2 class="ol">Sem internet</h2>
-  <button class="playBtn" id="retryBtn" style="font-size:1.5rem"><span class="ol">tentar de novo</span></button>
+  <h2 class="ol">No internet</h2>
+  <button class="playBtn" id="retryBtn" style="font-size:1.5rem"><span class="ol">try again</span></button>
 </div>
 
 <div id="shop" class="sheet hidden" role="dialog" aria-modal="true" aria-label="Loja">
   <div class="sheetBar">
     <button class="iconBtn" id="shopClose" aria-label="Voltar"></button>
-    <h2>Loja</h2>
+    <h2>Shop</h2>
     <div class="coinPill"><span class="coin"></span><b class="coinValue">0</b><span class="gem"></span><b class="gemValue">0</b></div>
   </div>
   <div class="tabs" id="shopTabs"></div>
   <div class="sheetBody" id="shopBody"></div>
 </div>
 
-<div id="missions" class="sheet hidden" role="dialog" aria-modal="true" aria-label="Missões">
+<div id="missions" class="sheet hidden" role="dialog" aria-modal="true" aria-label="Missions">
   <div class="sheetBar">
     <button class="iconBtn" id="missionsClose" aria-label="Voltar"></button>
-    <h2>Missões</h2>
+    <h2>Missions</h2>
     <div class="coinPill"><span class="coin"></span><b class="coinValue">0</b><span class="gem"></span><b class="gemValue">0</b></div>
   </div>
   <div class="sheetBody" id="missionsBody"></div>
@@ -380,19 +380,19 @@ body[data-ctrlsize="p"]{ --cs:96px; } body[data-ctrlsize="g"]{ --cs:148px; }
 <div id="settings" class="sheet hidden" role="dialog" aria-modal="true" aria-label="Ajustes">
   <div class="sheetBar">
     <button class="iconBtn" id="settingsClose" aria-label="Voltar"></button>
-    <h2>Ajustes</h2>
+    <h2>Settings</h2>
   </div>
   <div class="sheetBody" id="settingsBody"></div>
 </div>
 
-<div id="adModal" class="adModal hidden" role="dialog" aria-modal="true" aria-label="Anúncio">
+<div id="adModal" class="adModal hidden" role="dialog" aria-modal="true" aria-label="Ad">
   <div class="adBox glass">
-    <div class="adTag">Anúncio de teste</div>
+    <div class="adTag">Test ad</div>
     <button class="iconBtn adClose" id="adClose" aria-label="Fechar"></button>
     <div class="adArt"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" fill="#fff"/></svg></div>
-    <p id="adText">Vídeo patrocinado</p>
+    <p id="adText">Sponsored video</p>
     <div id="adCount" class="adCount">5</div>
-    <button class="gummy gold cBtn hidden" id="adClaim" style="width:100%;height:48px;font-size:1.15rem">Receber prêmio</button>
+    <button class="gummy gold cBtn hidden" id="adClaim" style="width:100%;height:48px;font-size:1.15rem">Claim reward</button>
   </div>
 </div>
 
@@ -428,36 +428,36 @@ const COL = { purple:'#c080ff', blue:'#8f9aff', cyan:'#7fdcdc', green:'#7dff6e',
   pink:'#ff8fa0', red:'#ff4545', magenta:'#e23ce8', white:'#f4f4f4', mint:'#3ee6b4', sky:'#4fb2ff', lime:'#b8ff3c',
   black:'#3a3a44', gold:'#ffc62e', rose:'#ff5fa6' };
 const SKINS = [
-  {id:'verde', n:'Verde', c:[COL.green], r:'comum', p:0},
-  {id:'roxa', n:'Roxa', c:[COL.purple], r:'comum', p:0},
-  {id:'azul', n:'Azul', c:[COL.blue], r:'comum', p:0},
-  {id:'ciano', n:'Ciano', c:[COL.cyan], r:'comum', p:0},
-  {id:'amarela', n:'Amarela', c:[COL.yellow], r:'comum', p:0},
-  {id:'laranja', n:'Laranja', c:[COL.orange], r:'comum', p:0},
-  {id:'vermelha', n:'Vermelha', c:[COL.red], r:'comum', p:0},
-  {id:'rosa', n:'Rosa', c:[COL.pink], r:'comum', p:0},
+  {id:'verde', n:'Green', c:[COL.green], r:'comum', p:0},
+  {id:'roxa', n:'Purple', c:[COL.purple], r:'comum', p:0},
+  {id:'azul', n:'Blue', c:[COL.blue], r:'comum', p:0},
+  {id:'ciano', n:'Cyan', c:[COL.cyan], r:'comum', p:0},
+  {id:'amarela', n:'Yellow', c:[COL.yellow], r:'comum', p:0},
+  {id:'laranja', n:'Orange', c:[COL.orange], r:'comum', p:0},
+  {id:'vermelha', n:'Red', c:[COL.red], r:'comum', p:0},
+  {id:'rosa', n:'Pink', c:[COL.pink], r:'comum', p:0},
   {id:'magenta', n:'Magenta', c:[COL.magenta], r:'comum', p:150},
-  {id:'menta', n:'Menta', c:[COL.mint], r:'comum', p:150},
-  {id:'neve', n:'Neve', c:[COL.white], r:'comum', p:150},
-  {id:'sombra', n:'Sombra', c:[COL.black], r:'comum', p:150},
-  {id:'bala', n:'Bala', c:[COL.white,COL.red], r:'rara', p:500},
-  {id:'abelha', n:'Abelha', c:[COL.yellow,COL.black], r:'rara', p:500},
-  {id:'limao', n:'Limão', c:[COL.lime,COL.green], r:'rara', p:500},
-  {id:'ceu', n:'Céu', c:[COL.sky,COL.white], r:'rara', p:500},
-  {id:'uva', n:'Uva', c:[COL.purple,COL.magenta], r:'rara', p:600},
-  {id:'noite', n:'Noite', c:[COL.black,COL.sky], r:'rara', p:600},
+  {id:'menta', n:'Mint', c:[COL.mint], r:'comum', p:150},
+  {id:'neve', n:'Snow', c:[COL.white], r:'comum', p:150},
+  {id:'sombra', n:'Shadow', c:[COL.black], r:'comum', p:150},
+  {id:'bala', n:'Candy', c:[COL.white,COL.red], r:'rara', p:500},
+  {id:'abelha', n:'Bee', c:[COL.yellow,COL.black], r:'rara', p:500},
+  {id:'limao', n:'Lime', c:[COL.lime,COL.green], r:'rara', p:500},
+  {id:'ceu', n:'Sky', c:[COL.sky,COL.white], r:'rara', p:500},
+  {id:'uva', n:'Grape', c:[COL.purple,COL.magenta], r:'rara', p:600},
+  {id:'noite', n:'Night', c:[COL.black,COL.sky], r:'rara', p:600},
   {id:'coral', n:'Coral', c:[COL.rose,COL.gold], r:'rara', p:600},
   {id:'neon', n:'Neon', c:[COL.magenta,COL.cyan], r:'rara', p:700},
-  {id:'oceano', n:'Oceano', c:[COL.blue,COL.cyan,COL.white], r:'rara', p:800},
-  {id:'fogo', n:'Fogo', c:[COL.red,COL.orange,COL.yellow], r:'rara', p:800},
-  {id:'arco', n:'Arco íris', c:[COL.red,COL.orange,COL.yellow,COL.green,COL.cyan,COL.blue,COL.purple], r:'rara', p:1000},
-  {id:'galaxia', n:'Galáxia', c:['#3a2690','#6a3fd8',COL.purple,'#ffffff'], r:'lendaria', p:50, cur:'gem', fx:['aura','trail'], glow:'#c080ff'},
+  {id:'oceano', n:'Ocean', c:[COL.blue,COL.cyan,COL.white], r:'rara', p:800},
+  {id:'fogo', n:'Fire', c:[COL.red,COL.orange,COL.yellow], r:'rara', p:800},
+  {id:'arco', n:'Rainbow', c:[COL.red,COL.orange,COL.yellow,COL.green,COL.cyan,COL.blue,COL.purple], r:'rara', p:1000},
+  {id:'galaxia', n:'Galaxy', c:['#3a2690','#6a3fd8',COL.purple,'#ffffff'], r:'lendaria', p:50, cur:'gem', fx:['aura','trail'], glow:'#c080ff'},
   {id:'lava', n:'Lava', c:['#7a1010',COL.red,COL.orange,COL.gold], r:'lendaria', p:50, cur:'gem', fx:['trail','eyes'], glow:'#ff6a20'},
   {id:'aurora', n:'Aurora', c:[COL.mint,COL.sky,COL.purple], r:'lendaria', p:100, cur:'gem', fx:['aura','eyes'], glow:'#3ee6b4'},
-  {id:'ouro', n:'Ouro Real', c:[COL.gold,'#fff3b0',COL.gold,'#b8860b'], r:'lendaria', p:100, cur:'gem', fx:['aura','trail','eyes'], glow:'#ffc62e'}
+  {id:'ouro', n:'Royal Gold', c:[COL.gold,'#fff3b0',COL.gold,'#b8860b'], r:'lendaria', p:100, cur:'gem', fx:['aura','trail','eyes'], glow:'#ffc62e'}
 ];
 const SKIN_BY_ID = {}; for(const k of SKINS) SKIN_BY_ID[k.id] = k;
-const RAR_LABEL = {comum:'Comum', rara:'Rara', lendaria:'Lendária', custom:'Sua criação'};
+const RAR_LABEL = {comum:'Common', rara:'Rare', lendaria:'Legendary', custom:'Your creation'};
 function registerCustom(cs){
   const sk = {id:cs.id, n:cs.n, c:cs.c.slice(), band:cs.band, eyes:cs.eyes, r:'custom', p:0};
   SKIN_BY_ID[sk.id] = sk; if(!stats.owned.includes(sk.id)) stats.owned.push(sk.id); return sk;
@@ -468,14 +468,14 @@ if(!SKIN_BY_ID[stats.skinId] || !stats.owned.includes(stats.skinId)) stats.skinI
 function curSkin(){ return SKIN_BY_ID[stats.skinId] || SKINS[0]; }
 const EFFECTS = [
   {id:'aura',     n:'Aura',            p:50,  cur:'gem'},
-  {id:'eyes',     n:'Olhar brilhante', p:50,  cur:'gem'},
-  {id:'trail',    n:'Poeira estelar',  p:50,  cur:'gem'},
-  {id:'confetti', n:'Confete',         p:50,  cur:'gem'},
-  {id:'hearts',   n:'Corações',        p:50,  cur:'gem'},
-  {id:'bubbles',  n:'Bolhas',          p:50,  cur:'gem'},
-  {id:'rainbow',  n:'Turbo arco íris', p:100, cur:'gem'},
-  {id:'pulse',    n:'Ondas',           p:100, cur:'gem'},
-  {id:'bolt',     n:'Elétrico',        p:100, cur:'gem'}
+  {id:'eyes',     n:'Shining eyes', p:50,  cur:'gem'},
+  {id:'trail',    n:'Stardust',  p:50,  cur:'gem'},
+  {id:'confetti', n:'Confetti',        p:50,  cur:'gem'},
+  {id:'hearts',   n:'Hearts',          p:50,  cur:'gem'},
+  {id:'bubbles',  n:'Bubbles',          p:50,  cur:'gem'},
+  {id:'rainbow',  n:'Rainbow boost', p:100, cur:'gem'},
+  {id:'pulse',    n:'Waves',           p:100, cur:'gem'},
+  {id:'bolt',     n:'Electric',        p:100, cur:'gem'}
 ];
 const RAINBOW = [COL.red,COL.orange,COL.yellow,COL.green,COL.cyan,COL.blue,COL.purple];
 if(stats.fxId && !stats.ownedFx.includes(stats.fxId)) stats.fxId = '';
@@ -566,14 +566,14 @@ resize();
 /* ---------- arena backgrounds (pre rendered tiles drawn as a pattern) ---------- */
 const BG_S = 2;
 const BGS = [
-  {id:'classico', n:'Clássico', p:0, kind:'hex', base:'#0d1014', a:'#252a33', b:'#171a21', e:'rgba(255,255,255,0.035)'},
-  {id:'mar', n:'Fundo do Mar', p:400, kind:'hex', base:'#03101c', a:'#14476a', b:'#0a2740', e:'rgba(120,210,255,0.12)'},
-  {id:'tabuleiro', n:'Tabuleiro', p:400, kind:'checker', base:'#12142a', a:'#2a2e4e', b:'#1d2039'},
-  {id:'floresta', n:'Floresta', p:600, kind:'scales', base:'#06140b', a:'#1f5a30', b:'#0e2e18'},
-  {id:'uva', n:'Doce de Uva', p:600, kind:'dots', base:'#1a0c2c', a:'#3a1c62', b:'#ff7fc8'},
-  {id:'grade', n:'Grade Neon', p:900, kind:'grid', base:'#07060f', a:'#15123a', b:'#39e6ff'},
+  {id:'classico', n:'Classic', p:0, kind:'hex', base:'#0d1014', a:'#252a33', b:'#171a21', e:'rgba(255,255,255,0.035)'},
+  {id:'mar', n:'Deep Sea', p:400, kind:'hex', base:'#03101c', a:'#14476a', b:'#0a2740', e:'rgba(120,210,255,0.12)'},
+  {id:'tabuleiro', n:'Checkerboard', p:400, kind:'checker', base:'#12142a', a:'#2a2e4e', b:'#1d2039'},
+  {id:'floresta', n:'Forest', p:600, kind:'scales', base:'#06140b', a:'#1f5a30', b:'#0e2e18'},
+  {id:'uva', n:'Grape Candy', p:600, kind:'dots', base:'#1a0c2c', a:'#3a1c62', b:'#ff7fc8'},
+  {id:'grade', n:'Neon Grid', p:900, kind:'grid', base:'#07060f', a:'#15123a', b:'#39e6ff'},
   {id:'magma', n:'Magma', p:50, cur:'gem', kind:'hex', base:'#1c0402', a:'#3e100a', b:'#240805', e:'rgba(255,110,40,0.5)'},
-  {id:'espaco', n:'Espaço', p:100, cur:'gem', kind:'stars', base:'#04051a', a:'#1e2266', b:'#7a3fd8'}
+  {id:'espaco', n:'Space', p:100, cur:'gem', kind:'stars', base:'#04051a', a:'#1e2266', b:'#7a3fd8'}
 ];
 const BG_BY_ID = {}; for(const b of BGS) BG_BY_ID[b.id] = b;
 if(!BG_BY_ID[stats.bgId] || !stats.ownedBgs.includes(stats.bgId)) stats.bgId = 'classico';
@@ -1562,7 +1562,7 @@ function addGems(n){ stats.gems += n; saveStats(); refreshCoins(); }
 function curIcon(cur){ return cur === 'gem' ? '<span class="gem sm"></span>' : '<span class="coin sm"></span>'; }
 function wallet(cur){ return cur === 'gem' ? stats.gems : stats.coins; }
 function pay(p, cur){
-  if(wallet(cur) < p){ showToast('Faltam '+fmt(p - wallet(cur))+(cur === 'gem' ? ' diamantes' : ' Escamas')); return false; }
+  if(wallet(cur) < p){ showToast('You need '+fmt(p - wallet(cur))+(cur === 'gem' ? ' more diamonds' : ' more Scales')); return false; }
   if(cur === 'gem') stats.gems -= p; else stats.coins -= p;
   saveStats(); refreshCoins(); return true;
 }
@@ -1571,13 +1571,13 @@ function yesterdayKey(){ const d = new Date(); d.setDate(d.getDate()-1); return 
 function timeToMidnight(){ const n = new Date(), m = new Date(n); m.setHours(24,0,0,0); const ms = m-n; return Math.floor(ms/3600000)+'h '+Math.floor(ms%3600000/60000)+'min'; }
 
 const MISSION_TYPES = [
-  {t:'eat',     lv:[300,800,1500], rw:[3,3,5],  ic:'orb',    col:'#ff9fb4', txt:v => 'Coma '+fmt(v)+' de energia'},
-  {t:'size',    lv:[150,400,900],  rw:[3,3,5],  ic:'snake',  col:'#8cf25a', txt:v => 'Chegue a tamanho '+fmt(v)},
-  {t:'boops',   lv:[1,3,6],        rw:[3,5,5], ic:'burst',  col:'#ffb14a', txt:v => 'Faça '+v+(v>1 ? ' boops' : ' boop')},
-  {t:'top10',   lv:[1],            rw:[5],         ic:'trophy', col:'#ffd35a', txt:() => 'Entre no top 50'},
-  {t:'survive', lv:[120,300],      rw:[3,5],      ic:'heart',  col:'#ff7fc8', txt:v => 'Sobreviva '+(v/60)+' minutos'},
-  {t:'games',   lv:[3,6],          rw:[3,3],      ic:'play',   col:'#5cc8ff', txt:v => 'Jogue '+v+' partidas'},
-  {t:'boost',   lv:[20,60],        rw:[3,5],      ic:'bolt',   col:'#b89bff', txt:v => 'Use o turbo por '+v+' segundos'}
+  {t:'eat',     lv:[300,800,1500], rw:[3,3,5],  ic:'orb',    col:'#ff9fb4', txt:v => 'Eat '+fmt(v)+' energy'},
+  {t:'size',    lv:[150,400,900],  rw:[3,3,5],  ic:'snake',  col:'#8cf25a', txt:v => 'Reach size '+fmt(v)},
+  {t:'boops',   lv:[1,3,6],        rw:[3,5,5], ic:'burst',  col:'#ffb14a', txt:v => 'Make '+v+(v>1 ? ' boops' : ' boop')},
+  {t:'top10',   lv:[1],            rw:[5],         ic:'trophy', col:'#ffd35a', txt:() => 'Reach the top 50'},
+  {t:'survive', lv:[120,300],      rw:[3,5],      ic:'heart',  col:'#ff7fc8', txt:v => 'Survive '+(v/60)+' minutes'},
+  {t:'games',   lv:[3,6],          rw:[3,3],      ic:'play',   col:'#5cc8ff', txt:v => 'Play '+v+' matches'},
+  {t:'boost',   lv:[20,60],        rw:[3,5],      ic:'bolt',   col:'#b89bff', txt:v => 'Boost for '+v+' seconds'}
 ];
 const MT = {}; for(const m of MISSION_TYPES) MT[m.t] = m;
 function hashStr(str){ let h = 2166136261; for(let i=0;i<str.length;i++){ h ^= str.charCodeAt(i); h = Math.imul(h,16777619); } return h>>>0; }
@@ -1603,7 +1603,7 @@ function ensureDaily(){
 function missionDone(m){
   if(m.done || m.prog < m.target) return;
   m.done = true; m.prog = m.target;
-  showToast('Missão concluída! Resgate no menu');
+  showToast('Mission complete! Claim it in the menu');
   saveStats(); updateMenu();
 }
 function missionAdd(type, delta){ if(!delta) return; for(const m of stats.missions.list){ if(m.t === type && !m.done){ m.prog += delta; missionDone(m); } } }
@@ -1814,7 +1814,7 @@ function openSheet(id){ $(id).classList.remove('hidden'); sheetOpen = true; refr
 function closeSheet(id){ $(id).classList.add('hidden'); sheetOpen = !!document.querySelector('.sheet:not(.hidden)'); updateMenu(); }
 
 /* ---------- shop ---------- */
-const SHOP_TABS = [['skins','Skins','snake','#8cf25a'],['criar','Criar','palette','#ff7fc8'],['fundos','Fundos','image','#5cc8ff'],['efeitos','Efeitos','sparkle','#c9a6ff'],['escamas','Moedas','coin','']];
+const SHOP_TABS = [['skins','Skins','snake','#8cf25a'],['criar','Create','palette','#ff7fc8'],['fundos','Arenas','image','#5cc8ff'],['efeitos','Effects','sparkle','#c9a6ff'],['escamas','Coins','coin','']];
 let shopTab = 'skins';
 function openShop(tab){ openSheet('shop'); setShopTab(tab || 'skins'); }
 function setShopTab(tab){
@@ -1831,16 +1831,16 @@ function setShopTab(tab){
 function secTitle(txt){ const d = document.createElement('div'); d.className = 'secTitle'; d.innerHTML = txt+'<i></i>'; return d; }
 function priceBtn(p, onBuy, cur){
   const b = document.createElement('button'); b.className = 'gummy '+(cur === 'gem' ? 'sky' : 'gold')+' cBtn';
-  b.innerHTML = p === 0 ? 'Grátis' : curIcon(cur)+fmt(p);
+  b.innerHTML = p === 0 ? 'Free' : curIcon(cur)+fmt(p);
   b.onclick = onBuy; return b;
 }
 function usingTag(){ const d = document.createElement('div'); d.className = 'usingTag'; d.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20">'+ICON.check+'</svg>Usando'; return d; }
-function useBtn(onUse){ const b = document.createElement('button'); b.className = 'gummy violet cBtn'; b.textContent = 'Usar'; b.onclick = onUse; return b; }
+function useBtn(onUse){ const b = document.createElement('button'); b.className = 'gummy violet cBtn'; b.textContent = 'Use'; b.onclick = onUse; return b; }
 function renderSkinsTab(body){
   const mine = SKINS.filter(s => stats.owned.includes(s.id));
   const custom = stats.custom.map(cs => SKIN_BY_ID[cs.id]).filter(Boolean);
-  const sections = [['Suas skins', custom.concat(mine)], ['Comuns', SKINS.filter(s => s.r==='comum' && !stats.owned.includes(s.id))],
-    ['Raras', SKINS.filter(s => s.r==='rara' && !stats.owned.includes(s.id))], ['Lendárias', SKINS.filter(s => s.r==='lendaria' && !stats.owned.includes(s.id))]];
+  const sections = [['Your skins', custom.concat(mine)], ['Common', SKINS.filter(s => s.r==='comum' && !stats.owned.includes(s.id))],
+    ['Rare', SKINS.filter(s => s.r==='rara' && !stats.owned.includes(s.id))], ['Legendary', SKINS.filter(s => s.r==='lendaria' && !stats.owned.includes(s.id))]];
   const draws = [];
   for(const [title, list] of sections){
     if(!list.length) continue;
@@ -1851,7 +1851,7 @@ function renderSkinsTab(body){
       const el = document.createElement('div'); el.className = 'card r-'+sk.r+(using ? ' using' : '');
       el.innerHTML = '<canvas></canvas><div class="cName">'+esc(sk.n)+'</div><span class="cTag">'+RAR_LABEL[sk.r]+(sk.fx ? ' ✦' : '')+'</span>';
       if(using) el.appendChild(usingTag());
-      else if(owned) el.appendChild(useBtn(() => { stats.skinId = sk.id; saveStats(); setShopTab('skins'); showToast(sk.n+' equipada'); }));
+      else if(owned) el.appendChild(useBtn(() => { stats.skinId = sk.id; saveStats(); setShopTab('skins'); showToast(sk.n+' equipped'); }));
       else el.appendChild(priceBtn(sk.p, () => buySkin(sk), sk.cur));
       grid.appendChild(el); draws.push([el.querySelector('canvas'), sk]);
     }
@@ -1862,7 +1862,7 @@ function renderSkinsTab(body){
 function buySkin(sk){
   if(!pay(sk.p, sk.cur)) return;
   stats.owned.push(sk.id); stats.skinId = sk.id;
-  saveStats(); refreshCoins(); beep(880,0.15,0.05); showToast('Você ganhou a skin '+sk.n+'!'); setShopTab('skins');
+  saveStats(); refreshCoins(); beep(880,0.15,0.05); showToast('You got the '+sk.n+' skin!'); setShopTab('skins');
 }
 
 const PALETTE = ['#7dff6e','#b8ff3c','#3ee6b4','#7fdcdc','#4fb2ff','#8f9aff','#6a3fd8','#c080ff','#e23ce8',
@@ -1875,12 +1875,12 @@ function renderCreator(body){
   const price = customPrice();
   body.innerHTML = '<div class="creator">'+
     '<canvas id="creatorCv"></canvas>'+
-    '<div class="fieldLbl">Cores do corpo</div><div class="slots" id="cSlots"></div>'+
+    '<div class="fieldLbl">Body colors</div><div class="slots" id="cSlots"></div>'+
     '<div class="palette" id="cPal">'+PALETTE.map(c => '<button class="sw" style="background:'+c+'" data-c="'+c+'" aria-label="Cor '+c+'"></button>').join('')+'</div>'+
-    '<div class="fieldLbl">Listras</div>'+segHtml('cBand', [[2,'Finas'],[5,'Médias'],[9,'Largas']], creator.band)+
-    '<div class="fieldLbl">Olhos</div>'+segHtml('cEyes', [['normal','Normal'],['grandes','Fofos'],['bravos','Bravos'],['sono','Sono']], creator.eyes)+
-    '<div class="fieldLbl">Nome da skin</div><input class="textIn" id="cName" maxlength="14" placeholder="Minha cobrinha" value="'+esc(creator.n)+'">'+
-    '<button class="gummy green bigPlay" id="cSave" style="height:58px;font-size:1.4rem">'+(price === 0 ? 'Salvar grátis' : 'Salvar por <span class="coin"></span>'+fmt(price))+'</button>'+
+    '<div class="fieldLbl">Stripes</div>'+segHtml('cBand', [[2,'Thin'],[5,'Medium'],[9,'Wide']], creator.band)+
+    '<div class="fieldLbl">Eyes</div>'+segHtml('cEyes', [['normal','Normal'],['grandes','Cute'],['bravos','Angry'],['sono','Sleepy']], creator.eyes)+
+    '<div class="fieldLbl">Skin name</div><input class="textIn" id="cName" maxlength="14" placeholder="My little snake" value="'+esc(creator.n)+'">'+
+    '<button class="gummy green bigPlay" id="cSave" style="height:58px;font-size:1.4rem">'+(price === 0 ? 'Save for free' : 'Save for <span class="coin"></span>'+fmt(price))+'</button>'+
     '</div>';
   renderSlots();
   $('cPal').querySelectorAll('.sw').forEach(b => b.onclick = () => { creator.c[creator.sel] = b.dataset.c; renderSlots(); });
@@ -1893,37 +1893,37 @@ function renderSlots(){
   const box = $('cSlots'); box.innerHTML = '';
   creator.c.forEach((c, i) => {
     const b = document.createElement('button'); b.className = 'slot'+(i === creator.sel ? ' sel' : ''); b.style.background = c;
-    b.setAttribute('aria-label', 'Cor '+(i+1)); b.onclick = () => { creator.sel = i; renderSlots(); }; box.appendChild(b);
+    b.setAttribute('aria-label', 'Color '+(i+1)); b.onclick = () => { creator.sel = i; renderSlots(); }; box.appendChild(b);
   });
-  if(creator.c.length < 6){ const a = document.createElement('button'); a.className = 'slotAdd'; a.textContent = '+'; a.setAttribute('aria-label','Adicionar cor');
+  if(creator.c.length < 6){ const a = document.createElement('button'); a.className = 'slotAdd'; a.textContent = '+'; a.setAttribute('aria-label','Add color');
     a.onclick = () => { creator.c.push(creator.c[creator.c.length-1]); creator.sel = creator.c.length-1; renderSlots(); }; box.appendChild(a); }
-  if(creator.c.length > 1){ const r = document.createElement('button'); r.className = 'slotAdd'; r.textContent = '−'; r.setAttribute('aria-label','Remover cor selecionada');
+  if(creator.c.length > 1){ const r = document.createElement('button'); r.className = 'slotAdd'; r.textContent = '−'; r.setAttribute('aria-label','Remove selected color');
     r.onclick = () => { creator.c.splice(creator.sel, 1); creator.sel = Math.max(0, creator.sel-1); renderSlots(); }; box.appendChild(r); }
 }
 function saveCreation(){
-  if(stats.custom.length >= 8){ showToast('Você já tem 8 criações'); return; }
+  if(stats.custom.length >= 8){ showToast('You already have 8 creations'); return; }
   const price = customPrice();
-  if(stats.coins < price){ showToast('Faltam '+fmt(price - stats.coins)+' Escamas'); return; }
+  if(stats.coins < price){ showToast('You need '+fmt(price - stats.coins)+' more Scales'); return; }
   stats.coins -= price;
-  const cs = {id:'c'+Date.now(), n:(creator.n.trim() || 'Minha cobrinha'), c:creator.c.slice(), band:creator.band, eyes:creator.eyes};
+  const cs = {id:'c'+Date.now(), n:(creator.n.trim() || 'My little snake'), c:creator.c.slice(), band:creator.band, eyes:creator.eyes};
   stats.custom.push(cs); registerCustom(cs); stats.skinId = cs.id;
   saveStats(); refreshCoins(); beep(880,0.15,0.05);
-  showToast(cs.n+' salva e equipada!'); setShopTab('skins');
+  showToast(cs.n+' saved and equipped!'); setShopTab('skins');
 }
 
 function renderBgTab(body){
-  body.appendChild(secTitle('Fundos da arena'));
+  body.appendChild(secTitle('Arena backgrounds'));
   const grid = document.createElement('div'); grid.className = 'grid'; const draws = [];
   for(const bg of BGS){
     const owned = stats.ownedBgs.includes(bg.id), using = stats.bgId === bg.id;
     const el = document.createElement('div'); el.className = 'card'+(using ? ' using' : '')+(bg.cur === 'gem' ? ' r-lendaria' : bg.p >= 600 ? ' r-rara' : '');
-    el.innerHTML = '<canvas></canvas><div class="cName">'+bg.n+'</div><span class="cTag">'+(bg.p === 0 ? 'Padrão' : bg.cur === 'gem' ? 'Lendário' : bg.p >= 600 ? 'Raro' : 'Comum')+'</span>';
+    el.innerHTML = '<canvas></canvas><div class="cName">'+bg.n+'</div><span class="cTag">'+(bg.p === 0 ? 'Default' : bg.cur === 'gem' ? 'Legendary' : bg.p >= 600 ? 'Rare' : 'Common')+'</span>';
     if(using) el.appendChild(usingTag());
-    else if(owned) el.appendChild(useBtn(() => { setBackground(bg.id); setShopTab('fundos'); showToast('Fundo '+bg.n+' aplicado'); }));
+    else if(owned) el.appendChild(useBtn(() => { setBackground(bg.id); setShopTab('fundos'); showToast(bg.n+' arena applied'); }));
     else el.appendChild(priceBtn(bg.p, () => {
       if(!pay(bg.p, bg.cur)) return;
       stats.ownedBgs.push(bg.id); setBackground(bg.id); beep(880,0.15,0.05);
-      showToast('Fundo '+bg.n+' desbloqueado!'); setShopTab('fundos');
+      showToast(bg.n+' arena unlocked!'); setShopTab('fundos');
     }, bg.cur));
     grid.appendChild(el); draws.push([el.querySelector('canvas'), bg]);
   }
@@ -1939,14 +1939,14 @@ function renderFxTab(body){
   for(const fx of EFFECTS){
     const owned = stats.ownedFx.includes(fx.id), using = stats.fxId === fx.id;
     const el = document.createElement('div'); el.className = 'card '+(fx.p >= 100 ? 'r-lendaria' : 'r-rara')+(using ? ' using' : '');
-    el.innerHTML = '<canvas></canvas><div class="cName">'+fx.n+'</div><span class="cTag">'+(fx.p >= 100 ? 'Lendário' : 'Raro')+'</span>';
-    if(using){ const b = document.createElement('button'); b.className = 'gummy plain cBtn'; b.textContent = 'Tirar';
+    el.innerHTML = '<canvas></canvas><div class="cName">'+fx.n+'</div><span class="cTag">'+(fx.p >= 100 ? 'Legendary' : 'Rare')+'</span>';
+    if(using){ const b = document.createElement('button'); b.className = 'gummy plain cBtn'; b.textContent = 'Remove';
       b.onclick = () => { stats.fxId = ''; saveStats(); setShopTab('efeitos'); }; el.appendChild(b); }
-    else if(owned) el.appendChild(useBtn(() => { stats.fxId = fx.id; saveStats(); setShopTab('efeitos'); showToast('Efeito '+fx.n+' ativado'); }));
+    else if(owned) el.appendChild(useBtn(() => { stats.fxId = fx.id; saveStats(); setShopTab('efeitos'); showToast(fx.n+' effect on'); }));
     else el.appendChild(priceBtn(fx.p, () => {
       if(!pay(fx.p, fx.cur)) return;
       stats.ownedFx.push(fx.id); stats.fxId = fx.id; saveStats(); beep(990,0.2,0.05);
-      showToast('Efeito '+fx.n+' desbloqueado!'); setShopTab('efeitos');
+      showToast(fx.n+' effect unlocked!'); setShopTab('efeitos');
     }, fx.cur));
     grid.appendChild(el); fxCards.push([el.querySelector('canvas'), fx.id]);
   }
@@ -1958,28 +1958,28 @@ function videoLeft(){ if(stats.video.date !== dayKey()) stats.video = {date:dayK
 const EXCHANGE = [[5,250],[20,1100],[50,3000]];
 function renderCoinsTab(body){
   const left = videoLeft();
-  body.appendChild(secTitle('Trocar diamantes'));
+  body.appendChild(secTitle('Trade diamonds'));
   for(const [g, c] of EXCHANGE){
     const el = document.createElement('div'); el.className = 'row';
-    el.innerHTML = '<div class="rIco" style="background:rgba(255,201,61,.16)"><span class="coin" style="transform:scale(1.5)"></span></div><div class="rTxt">'+fmt(c)+' Escamas</div>';
-    el.appendChild(priceBtn(g, () => { if(!pay(g, 'gem')) return; addCoins(c); beep(880,0.12,0.04); showToast('+'+fmt(c)+' Escamas'); setShopTab('escamas'); }, 'gem'));
+    el.innerHTML = '<div class="rIco" style="background:rgba(255,201,61,.16)"><span class="coin" style="transform:scale(1.5)"></span></div><div class="rTxt">'+fmt(c)+' Scales</div>';
+    el.appendChild(priceBtn(g, () => { if(!pay(g, 'gem')) return; addCoins(c); beep(880,0.12,0.04); showToast('+'+fmt(c)+' Scales'); setShopTab('escamas'); }, 'gem'));
     body.appendChild(el);
   }
   const v = document.createElement('div'); v.className = 'row';
-  v.innerHTML = '<div class="rIco" style="background:rgba(140,242,90,.16);color:#8cf25a">'+ico('film')+'</div><div class="rTxt">Vídeo grátis<small>'+left+' de 5 hoje</small></div>';
+  v.innerHTML = '<div class="rIco" style="background:rgba(140,242,90,.16);color:#8cf25a">'+ico('film')+'</div><div class="rTxt">Free video<small>'+left+' of 5 today</small></div>';
   const vb = document.createElement('button');
-  if(left > 0){ vb.className = 'gummy green cBtn'; vb.innerHTML = '▶ +15'; vb.onclick = () => showRewardedAd(() => { stats.video.n++; addCoins(15); showToast('+15 Escamas'); setShopTab('escamas'); }); }
-  else { vb.className = 'gummy plain cBtn'; vb.textContent = 'Amanhã'; vb.disabled = true; }
+  if(left > 0){ vb.className = 'gummy green cBtn'; vb.innerHTML = '▶ +15'; vb.onclick = () => showRewardedAd(() => { stats.video.n++; addCoins(15); showToast('+15 Scales'); setShopTab('escamas'); }); }
+  else { vb.className = 'gummy plain cBtn'; vb.textContent = 'Tomorrow'; vb.disabled = true; }
   v.appendChild(vb); body.appendChild(v);
   body.appendChild(secTitle('Diamantes'));
   for(const [amt, price, col] of [[60,'R$ 4,90','#7fe6ff'],[130,'R$ 9,90','#5cc8ff'],[300,'R$ 19,90','#8f7bff']]){
     const el = document.createElement('div'); el.className = 'row';
-    el.innerHTML = '<div class="rIco" style="background:rgba(92,200,255,.16)"><span class="gem" style="transform:scale(1.5)"></span></div><div class="rTxt">'+amt+' diamantes</div>';
+    el.innerHTML = '<div class="rIco" style="background:rgba(92,200,255,.16)"><span class="gem" style="transform:scale(1.5)"></span></div><div class="rTxt">'+amt+' diamonds</div>';
     const b = document.createElement('button'); b.className = 'gummy plain cBtn'; b.textContent = price; b.disabled = true;
     el.appendChild(b); body.appendChild(el);
   }
   const na = document.createElement('div'); na.className = 'row';
-  na.innerHTML = '<div class="rIco" style="background:rgba(255,111,134,.16);color:#ff6f86">'+ico('noads')+'</div><div class="rTxt">Sem anúncios</div>';
+  na.innerHTML = '<div class="rIco" style="background:rgba(255,111,134,.16);color:#ff6f86">'+ico('noads')+'</div><div class="rTxt">No ads</div>';
   const nb = document.createElement('button'); nb.className = 'gummy plain cBtn'; nb.textContent = 'R$ 9,90'; nb.disabled = true;
   na.appendChild(nb); body.appendChild(na);
 }
@@ -1991,14 +1991,14 @@ function renderMissions(){
   const L = stats.missions.list, claimedN = L.filter(m => m.claimed).length, info = streakInfo();
   const body = $('missionsBody');
   let chestHtml;
-  if(stats.missions.chest) chestHtml = '<div class="chestTxt">Baú aberto! Volte amanhã para outro</div>';
-  else if(claimedN === 3) chestHtml = '<button class="gummy gold cBtn pulse" id="chestBtn" style="margin-top:6px;width:100%">Abrir baú +'+CHEST_RW+' <span class="gem sm"></span></button>';
-  else chestHtml = '<div class="chestTxt">Resgate as 3 missões para abrir o baú de '+CHEST_RW+' diamantes</div>';
-  body.innerHTML = '<div class="mHero"><h3>Missões do dia</h3><div class="timer">Novas missões em '+timeToMidnight()+'</div>'+
+  if(stats.missions.chest) chestHtml = '<div class="chestTxt">Chest opened! Come back tomorrow for another</div>';
+  else if(claimedN === 3) chestHtml = '<button class="gummy gold cBtn pulse" id="chestBtn" style="margin-top:6px;width:100%">Open chest +'+CHEST_RW+' <span class="gem sm"></span></button>';
+  else chestHtml = '<div class="chestTxt">Claim all 3 missions to open the chest of '+CHEST_RW+' diamonds</div>';
+  body.innerHTML = '<div class="mHero"><h3>Daily missions</h3><div class="timer">New missions in '+timeToMidnight()+'</div>'+
     '<div class="chestRow">'+CHEST_SVG+'<div style="flex:1"><div class="pips">'+L.map(m => '<div class="pip'+(m.claimed?' full':'')+'"><i></i></div>').join('')+'</div>'+chestHtml+'</div></div></div>'+
-    '<div class="secTitle">Hoje<i></i></div><div id="mList"></div>'+
-    '<div class="glass streakCard"><div class="streakHead">Bônus diário <small>Dia '+info.day+' de 7</small></div><div class="days" id="days"></div>'+
-    '<button class="gummy '+(info.claimed?'plain':'green pulse')+' cBtn" id="streakBtn" style="width:100%;margin-top:10px"'+(info.claimed?' disabled':'')+'>'+(info.claimed ? 'Volte amanhã' : 'Pegar '+STREAK_RW[info.day-1]+' Escamas')+'</button></div>';
+    '<div class="secTitle">Today<i></i></div><div id="mList"></div>'+
+    '<div class="glass streakCard"><div class="streakHead">Daily bonus <small>Day '+info.day+' of 7</small></div><div class="days" id="days"></div>'+
+    '<button class="gummy '+(info.claimed?'plain':'green pulse')+' cBtn" id="streakBtn" style="width:100%;margin-top:10px"'+(info.claimed?' disabled':'')+'>'+(info.claimed ? 'Come back tomorrow' : 'Claim '+STREAK_RW[info.day-1]+' Scales')+'</button></div>';
   const list = $('mList');
   L.forEach((m, idx) => {
     const def = MT[m.t], pct = Math.min(100, m.prog/m.target*100);
@@ -2009,12 +2009,12 @@ function renderMissions(){
       '<div class="mSide"><div class="mRw"><span class="gem sm"></span>'+m.reward+'</div></div>';
     const side = el.querySelector('.mSide');
     if(m.claimed){ const t = document.createElement('div'); t.className = 'usingTag'; t.style.height = '36px'; t.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20">'+ICON.check+'</svg>'; side.appendChild(t); }
-    else if(m.done){ const b = document.createElement('button'); b.className = 'gummy gold cBtn pulse'; b.textContent = 'Pegar';
-      b.onclick = () => { m.claimed = true; addGems(m.reward); beep(880,0.12,0.04); showToast('+'+m.reward+' diamantes'); renderMissions(); updateMenu(); }; side.appendChild(b); }
-    else if(!stats.missions.rerolled){ const b = document.createElement('button'); b.className = 'reroll'; b.setAttribute('aria-label','Trocar missão assistindo um vídeo'); b.innerHTML = ico('refresh');
+    else if(m.done){ const b = document.createElement('button'); b.className = 'gummy gold cBtn pulse'; b.textContent = 'Claim';
+      b.onclick = () => { m.claimed = true; addGems(m.reward); beep(880,0.12,0.04); showToast('+'+m.reward+' diamonds'); renderMissions(); updateMenu(); }; side.appendChild(b); }
+    else if(!stats.missions.rerolled){ const b = document.createElement('button'); b.className = 'reroll'; b.setAttribute('aria-label','Swap mission by watching a video'); b.innerHTML = ico('refresh');
       b.onclick = () => showRewardedAd(() => {
         const others = L.filter((_,j) => j !== idx).map(x => x.t); others.push(m.t);
-        L[idx] = genMission(Math.random, others); stats.missions.rerolled = true; saveStats(); renderMissions(); showToast('Missão trocada');
+        L[idx] = genMission(Math.random, others); stats.missions.rerolled = true; saveStats(); renderMissions(); showToast('Mission swapped');
       }); side.appendChild(b); }
     list.appendChild(el);
   });
@@ -2022,16 +2022,16 @@ function renderMissions(){
   for(let i=1;i<=7;i++){
     const done = i < info.day || (i === info.day && info.claimed);
     const cls = (done ? ' done' : (i === info.day ? ' today' : '')) + (i === 7 ? ' big' : '');
-    dh += '<div class="day'+cls+'"><small>Dia '+i+'</small><b>'+(done ? '✓' : STREAK_RW[i-1])+'</b></div>';
+    dh += '<div class="day'+cls+'"><small>Day '+i+'</small><b>'+(done ? '✓' : STREAK_RW[i-1])+'</b></div>';
   }
   $('days').innerHTML = dh;
   $('streakBtn').onclick = () => {
     const inf = streakInfo(); if(inf.claimed) return;
     stats.streak = {last:dayKey(), day:inf.day}; addCoins(STREAK_RW[inf.day-1]); beep(880,0.12,0.04);
-    showToast('+'+STREAK_RW[inf.day-1]+' Escamas'); renderMissions(); updateMenu();
+    showToast('+'+STREAK_RW[inf.day-1]+' Scales'); renderMissions(); updateMenu();
   };
   const cb = $('chestBtn');
-  if(cb) cb.onclick = () => { stats.missions.chest = true; addGems(CHEST_RW); beep(990,0.2,0.05); showToast('Baú aberto! +'+CHEST_RW+' diamantes'); renderMissions(); updateMenu(); };
+  if(cb) cb.onclick = () => { stats.missions.chest = true; addGems(CHEST_RW); beep(990,0.2,0.05); showToast('Chest opened! +'+CHEST_RW+' diamonds'); renderMissions(); updateMenu(); };
 }
 function renderDeathMissions(){
   const box = $('dMissions'); box.innerHTML = '';
@@ -2045,10 +2045,10 @@ function renderDeathMissions(){
 
 /* ---------- settings ---------- */
 const CTRL_OPTS = [
-  ['float','Joystick livre','Aparece onde você encosta'],
-  ['fixed','Joystick fixo','Sempre no mesmo canto'],
-  ['follow','Seguir o dedo','Toque onde quer ir, dois dedos aceleram'],
-  ['arrows','Setas','Botões para virar']
+  ['float','Free joystick','Appears where you touch'],
+  ['fixed','Fixed joystick','Always in the same corner'],
+  ['follow','Follow finger','Tap where you want to go, two fingers boost'],
+  ['arrows','Arrows','Buttons to turn']
 ];
 function ctrlMock(mode, lefty){
   const J = 'rgba(255,255,255,.2)', JS = 'rgba(255,255,255,.55)', F = '#ffc93d';
@@ -2067,15 +2067,15 @@ function switchHtml(id, on){ return '<label class="switch"><input type="checkbox
 function openSettings(){ openSheet('settings'); renderSettings(); }
 function renderSettings(){
   const body = $('settingsBody');
-  body.innerHTML = '<div class="secTitle">Controles<i></i></div><div class="ctrlGrid" id="ctrlGrid">'+
+  body.innerHTML = '<div class="secTitle">Controls<i></i></div><div class="ctrlGrid" id="ctrlGrid">'+
     CTRL_OPTS.map(o => '<button class="ctrlOpt'+(stats.control===o[0]?' on':'')+'" data-v="'+o[0]+'" aria-pressed="'+(stats.control===o[0])+'">'+ctrlMock(o[0], stats.lefty)+'<b>'+o[1]+'</b></button>').join('')+'</div>'+
     '<div style="height:10px"></div>'+
-    '<div class="optRow"><div>Canhoto</div>'+switchHtml('oLefty', stats.lefty)+'</div>'+
-    '<div class="optRow" style="flex-wrap:wrap"><div>Botões</div>'+segHtml('oSize', [['p','P'],['m','M'],['g','G']], stats.ctrlSize).replace('class="seg"','class="seg" style="flex:1;max-width:220px"')+'</div>'+
-    '<div class="secTitle">Jogo<i></i></div>'+
-    '<div class="optRow"><div>Otimização</div>'+switchHtml('oOpt', stats.light)+'</div>'+
-    '<div class="optRow"><div>Som</div>'+switchHtml('oSound', stats.sound)+'</div>'+
-    '<div class="optRow"><div>Mostrar FPS</div>'+switchHtml('oFPS', stats.fps)+'</div>';
+    '<div class="optRow"><div>Left handed</div>'+switchHtml('oLefty', stats.lefty)+'</div>'+
+    '<div class="optRow" style="flex-wrap:wrap"><div>Buttons</div>'+segHtml('oSize', [['p','P'],['m','M'],['g','G']], stats.ctrlSize).replace('class="seg"','class="seg" style="flex:1;max-width:220px"')+'</div>'+
+    '<div class="secTitle">Game<i></i></div>'+
+    '<div class="optRow"><div>Performance mode</div>'+switchHtml('oOpt', stats.light)+'</div>'+
+    '<div class="optRow"><div>Sound</div>'+switchHtml('oSound', stats.sound)+'</div>'+
+    '<div class="optRow"><div>Show FPS</div>'+switchHtml('oFPS', stats.fps)+'</div>';
   $('ctrlGrid').querySelectorAll('.ctrlOpt').forEach(b => b.onclick = () => { stats.control = b.dataset.v; saveStats(); renderSettings(); });
   $('oLefty').onchange = e => { stats.lefty = e.target.checked; saveStats(); renderSettings(); };
   $('oSize').querySelectorAll('button').forEach(b => b.onclick = () => { stats.ctrlSize = b.dataset.v; saveStats(); renderSettings(); });
@@ -2089,7 +2089,7 @@ let adTimer = 0;
 function showAd(rewarded, cb){
   let left = rewarded ? 5 : 3;
   $('adModal').classList.remove('hidden');
-  $('adText').textContent = rewarded ? 'Assista até o fim para ganhar o prêmio' : 'Intervalo comercial';
+  $('adText').textContent = rewarded ? 'Watch to the end to get the reward' : 'Commercial break';
   $('adClaim').classList.add('hidden'); $('adClose').classList.toggle('hidden', !rewarded);
   $('adCount').textContent = left; $('adCount').classList.remove('hidden');
   clearInterval(adTimer);
@@ -2136,13 +2136,13 @@ function checkOnline(){ const on = isOnline(); $('offline').classList.toggle('hi
 function tryPlay(){ if(!checkOnline()){ $('offline').classList.remove('hidden'); return; } startGame(); }
 window.addEventListener('online', checkOnline);
 window.addEventListener('offline', checkOnline);
-$('retryBtn').addEventListener('click', () => { if(checkOnline()) showToast('Conectado!'); else showToast('Ainda sem internet'); });
+$('retryBtn').addEventListener('click', () => { if(checkOnline()) showToast('Connected!'); else showToast('Still offline'); });
 $('playBtn').addEventListener('click', tryPlay);
 $('againBtn').addEventListener('click', () => maybeInterstitial(tryPlay));
 $('menuBtn').addEventListener('click', () => maybeInterstitial(toMenu));
 $('doubleBtn').addEventListener('click', () => showRewardedAd(() => {
   if(doubled) return; doubled = true; addCoins(lastEarn);
-  $('earnVal').textContent = lastEarn*2; $('doubleBtn').classList.add('hidden'); showToast('Escamas dobradas!');
+  $('earnVal').textContent = lastEarn*2; $('doubleBtn').classList.add('hidden'); showToast('Scales doubled!');
 }));
 $('nameInput').addEventListener('keydown', e => { if(e.key === 'Enter') tryPlay(); });
 $('nameInput').addEventListener('change', e => { stats.name = e.target.value.trim(); saveStats(); });
