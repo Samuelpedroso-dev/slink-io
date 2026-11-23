@@ -8,6 +8,7 @@
 <img src="https://img.shields.io/badge/-HTML5-E6C35C?style=for-the-badge&logo=html5&logoColor=D4AF37&labelColor=0a0a0a" />
 <img src="https://img.shields.io/badge/-JavaScript-E6C35C?style=for-the-badge&logo=javascript&logoColor=D4AF37&labelColor=0a0a0a" />
 <img src="https://img.shields.io/badge/-Zero%20Dependencies-E6C35C?style=for-the-badge&labelColor=0a0a0a" />
+<img src="https://img.shields.io/badge/-MIT%20License-E6C35C?style=for-the-badge&labelColor=0a0a0a" />
 
 <br/><br/>
 
@@ -47,6 +48,7 @@ slink-io/
 ├── index.html    game, styles and scripts
 ├── preview.jpg   screenshot used in this README
 ├── README.md     documentation
+├── LICENSE       MIT license
 ├── .gitignore
 └── .nojekyll
 ```
@@ -60,6 +62,12 @@ slink-io/
 <tr><td>◆</td><td>New arenas and progression content</td></tr>
 <tr><td>◆</td><td>Online leaderboards</td></tr>
 </table>
+
+<br/>
+
+## ◆ License
+
+MIT. See [LICENSE](LICENSE).
 
 <br/>
 
